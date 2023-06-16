@@ -1,7 +1,7 @@
  #include <stdio.h>
 /**
  * main - Entry point
- * Print the alphabet in lowercases
+ * Print single digits of base 10 using putchar
  * Followed by a new line
  *
  * Return: Always 0 (Success)
