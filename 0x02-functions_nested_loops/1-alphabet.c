@@ -1,18 +1,18 @@
 #include "main.h"
 /**
  * main - Entry point
- * Write a function that prints 10 times the alphabet,
+ * Write a function that prints alphabet,
  * in lowercase followed by a new line, and returns 0
  *
  * Return: Always 0
  */
 int main(void)
 {
-	int i;
+	int loweralpha;
 
-	for (i = 97; i <= 122; i++)
+	for (loweralpha = 97; loweralpha <= 122; loweralpha++)
 	{
-		_putchar(i);
+		_putchar(loweralpha);
 	}
 	_putchar('\n');
 	return (0);
