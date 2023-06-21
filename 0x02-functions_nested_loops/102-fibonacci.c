@@ -1,22 +1,30 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
- * main - Prints the first 50 Fibonacci numbers, starting with 1 and 2.
- *
+ * main - prints the first 50 Fibonacci numbers, starting with 1 and 2
+ * followed by a new line
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-	int i;
-	unsigned long num1 = 1, num2 = 2;
+	long int i, j, k, next;
 
-	for (i = 0; i < 50; i += 2)
+	j = 1;
+
+	k = 2;
+
+	for (i = 1; i <= 50; ++i)
 	{
-		printf("%lu, %lu\n", num1, num2);
-
-		num1 = num1 + num2;
-		num2 = num1 + num2;
+		if (j != 20365011074)
+		{
+			printf("%ld, ", j);
+		} else
+		{
+			printf("%ld\n", j);
+		}
+		next = j + k;
+		j = k;
+		k = next;
 	}
 
 	return (0);
