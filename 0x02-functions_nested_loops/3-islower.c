@@ -2,6 +2,7 @@
 /**
  * _islower - Entry point
  * Write a function that checks for lowercase
+ * @c: Values from ASCII table
  *
  * Return: Always 0
  */
