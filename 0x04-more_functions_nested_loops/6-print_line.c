@@ -1,12 +1,11 @@
 #include "main.h"
 /**
-* print_line - uses the character _ to form a line.
-* 
+* print_line - uses the character _ to form a line
 * @n: The number of times underscore is printed
 *
 * Return: void
 */
-void print_line(int)
+void print_line(int n)
 {
 	int i;
 
