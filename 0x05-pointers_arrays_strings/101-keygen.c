@@ -13,8 +13,8 @@
 int main(void)
 {
 	char password[PASSWORD_LENGTH + 1];
-	const char charset[] = ("abcdefghijklmnopqrstuvwxyz
-		ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
+	const char charset[] = "abcdefghijklmnopqrstuvwxyz \
+		ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	int i;
 
 	srand(time(NULL));
