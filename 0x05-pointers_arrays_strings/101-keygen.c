@@ -9,24 +9,27 @@
  *
  * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	char password[PASSWORD_LENGTH + 1];
-	const char charset[] = "abcdefghijklmnopqrstuvwxyz \
-		ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-	int i;
+	int sum = 0;
+	char c;
 
-	srand(time(NULL));
+	srand(time(0));
 
-	for (i = 0; i < PASSWORD_LENGTH; i++)
+	while (sum < 2772)
 	{
-		password[i] = charset[rand() % (sizeof(charset) - 1)];
-	}
-	password[PASSWORD_LENGTH] = '\0';
+		c = rand() % 128; /* generate a random ASCII character */
+		sum += c;
 
-	printf("%s\n", password);
+		if (sum > 2772) /* if the sum exceeds the target, undo the last addition */
+		{
+			sum -= c;
+			break;
+		}
+		printf("%c", c); /* print the character */
+	}
+	c = 2772 - sum; /* calculate the last character to get the exact sum */
+	printf("%c", c);
 
 	return (0);
 }
-
