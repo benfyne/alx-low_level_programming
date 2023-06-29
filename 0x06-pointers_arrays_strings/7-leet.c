@@ -1,34 +1,28 @@
 #include "main.h"
-/**
- * *leet(char *s) - encodes a string into 1337
- *
- * @s: string
- * @leet: encoder
- *
- * Return: leet
- */
-char *leet(char *s)
-{
-	int i = 0;
-	int j;
-	char *leet = malloc(size of(char) * strlen(s) + 1);
 
-	while (s[1])
+/**
+* leet - encodes a string into 1337
+* @str: the string to encode
+*
+* Return: pointer to the encoded string
+*/
+char *leet(char *str)
+{
+	char *leet_chars = "aAeEoOtTlL";
+	char *leet_replacements = "4433007711";
+	int i, j;
+
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		j = 0;
-		while ("AEOTLaeotl"[j])
+		for (j = 0; leet_chars[j] != '\0'; j++)
 		{
-			if ([i] == "AEOTLaeotl"[j])
+			if (str[i] == leet_chars[j])
 			{
-				leet[i] = "43071"[j];
+				str[i] = leet_replacements[j];
 				break;
 			}
-			j++;
 		}
-		if (!"AEOTLaeotl"[j])
-			leet[i] = s[i];
-		i++;
 	}
-	leet[i] = '\0';
-	return (leet);
+
+	return (str);
 }
