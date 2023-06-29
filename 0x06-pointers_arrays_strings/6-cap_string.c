@@ -9,32 +9,24 @@
 char *cap_string(char *s)
 {
 	int i = 0;
-	int flag = 1;
+	int capitalize_next = 1;
 
-	while (s[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if (flag == 1 && s[i] >= 'a' && s[i] <= 'z')
+		if (capitalize_next && isalpha(str[i]))
 		{
-			s[i] = s[i] - 32;
-			flag = 0;
+			str[i] = toupper(str[i]);
+			capitalize_next = 0;
 		}
-		else if (s[i] == ' ' ||
-			s[i] == '\t' ||
-			s[i] == '\n' ||
-			s[i] == ',' ||
-			s[i] == ';' ||
-			s[i] == '.' ||
-			s[i] == '!' ||
-			s[i] == '?' ||
-			s[i] == '"' ||
-			s[i] == '(' ||
-			s[i] == ')' ||
-			s[i] == '{' ||
-			s[i] == '}')
+		else if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
+			str[i] == ',' || str[i] == ';' || str[i] == '.' ||
+			str[i] == '!' || str[i] == '?' || str[i] == '"' ||
+			str[i] == '(' || str[i] == ')' || str[i] == '{' ||
+			str[i] == '}')
 		{
-			flag = 1;
+			capitalize_next = 1;
 		}
 		i++;
 	}
-	return (s);
+	return (str);
 }
