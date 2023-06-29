@@ -4,6 +4,7 @@
  *
  * @dest: strings
  * @src: strings
+ * @n: integer
  *
  * Return: dest
  */
