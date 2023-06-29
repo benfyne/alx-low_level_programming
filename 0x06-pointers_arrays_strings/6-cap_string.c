@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main"
 /**
  * *cap_string - Capitalize all words of a string
  *
@@ -13,12 +13,24 @@ char *cap_string(char *s)
 
 	while (s[i] != '\0')
 	{
-		if (flag == 1 && isalpha(s[i]))
+		if (flag == 1 && s[i] >= 'a' && s[i] <= 'z')
 		{
-			s[i] = toupper(s[i]);
+			s[i] = s[i] - 32;
 			flag = 0;
 		}
-		else if (strchr("\t\n,;.!?\"(){}", s[i]))
+		else if (s[i] == ' ' ||
+			s[i] == '\t' ||
+			s[i] == '\n' ||
+			s[i] == ',' ||
+			s[i] == ';' ||
+			s[i] == '.' ||
+			s[i] == '!' ||
+			s[i] == '?' ||
+			s[i] == '"' ||
+			s[i] == '(' ||
+			s[i] == ')' ||
+			s[i] == '{' ||
+			s[i] == '}')
 		{
 			flag = 1;
 		}
