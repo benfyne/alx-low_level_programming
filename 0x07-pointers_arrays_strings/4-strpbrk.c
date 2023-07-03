@@ -5,7 +5,7 @@
  * @s: string
  * @accept: string
  *
- * Return: s or null
+ * Return: new value
  */
 char *_strbrk(char *s, char *accept)
 {
