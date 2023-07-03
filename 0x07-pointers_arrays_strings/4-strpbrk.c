@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * _strpbrk - finds string
  * @s: string to find stuff
@@ -16,7 +17,7 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (s[i] == accept[j])
 			{
-				return (s + i);
+				return (&s[i]);
 			}
 		}
 	}
