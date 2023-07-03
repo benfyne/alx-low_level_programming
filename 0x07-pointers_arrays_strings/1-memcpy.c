@@ -1,8 +1,8 @@
-#include "main."
+#include "main.h"
 /**
  * *_memcpy - a function that locates a character in a string.
  *
- * @src array
+ * @src: array
  * @dest: array
  * @n: int
  *
