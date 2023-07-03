@@ -1,16 +1,14 @@
-#include "main.h"
-#include <stdio.h>
 /**
- * _strbrk - searches string for bytes
+ * _strpbrk - finds string
+ * @s: string to find stuff
+ * @accept: accepting arrays
  *
- * @s: string
- * @accept: string
- *
- * Return: new value
+ * Return: returns new value
  */
-char *_strbrk(char *s, char *accept)
+char *_strpbrk(char *s, char *accept)
 {
-	int i, j;
+	int i;
+	int j;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
