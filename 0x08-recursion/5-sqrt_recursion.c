@@ -1,4 +1,5 @@
 #include "main.h"
+int is_perfect_square(int n, int x);
 /**
  * _sqrt_recursion - squaare root of a number
  *
