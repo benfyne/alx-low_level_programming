@@ -16,7 +16,7 @@ int _sqrt_recursion(int n)
 	return (is_perfect_square(n, 0));
 }
 /**
- * _is_perfect_square - square root of natural number
+ * is_perfect_square - square root of natural number
  *
  * @n: number of sqaure root
  * @x: number
