@@ -12,7 +12,7 @@ int _sqrt_recursion(int n)
 	{
 		return (-1);
 	}
-	return (_is_perfect_square(n, 0));
+	return (is_perfect_square(n, 0));
 }
 /**
  * _is_perfect_square - square root of natural number
@@ -22,7 +22,7 @@ int _sqrt_recursion(int n)
  *
  * Return: sqrt
  */
-int _is_perfect_square(int n, int x)
+int is_perfect_square(int n, int x)
 {
 	if (x * x == n)
 	{
@@ -32,5 +32,5 @@ int _is_perfect_square(int n, int x)
 	{
 		return (-1);
 	}
-	return (_is_perfect_square(n, x + 1));
+	return (is_perfect_square(n, x + 1));
 }
