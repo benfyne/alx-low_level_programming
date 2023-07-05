@@ -12,38 +12,25 @@ int _sqrt_recursion(int n)
 	{
 		return (-1);
 	}
-	else if (n == 0 || n == 1)
-	{
-		return (n);
-	}
-	else
-	{
-		return (_sqrt_helper(n, 1, n));
-	}
+	return (_is perfect_square(n, 0));
 }
 /**
- * _sqrt_helper - square root of natural number
+ * _is_perfect_square - square root of natural number
  *
  * @n: number of sqaure root
- * @max: number
- * @min: number
+ * @x: number
  *
- * Return: sqrt helper
+ * Return: sqrt
  */
-int _sqrt_helper(int n, int min, int max)
+int _is_perfect_square(int n, int x)
 {
-	if (max < min)
+	if (x * x == n)
+	{
+		return (x);
+	}
+	if (x * x > n)
 	{
 		return (-1);
 	}
-	int guess = (min + max) / 2;
-
-	if (guess * guess == n)
-	{
-		return (guess);
-	}
-	else if (guess * guess < n)
-	{
-		return (_sqrt_helper(n, min, guess - 1));
-	}
+	return (_is_perfect_square(n, x + 1));
 }
