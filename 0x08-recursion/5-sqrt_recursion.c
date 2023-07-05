@@ -12,7 +12,7 @@ int _sqrt_recursion(int n)
 	{
 		return (-1);
 	}
-	return (_is perfect_square(n, 0));
+	return (_is_perfect_square(n, 0));
 }
 /**
  * _is_perfect_square - square root of natural number
