@@ -11,7 +11,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int cents, coins, quaters, dimes, nickels, pennies;
+	int cents, coins, quarters, dimes, nickels, pennies;
 
 	if  (argc != 2)
 	{
@@ -27,8 +27,8 @@ int main(int argc, char *argv[])
 	}
 	coins = 0;
 
-	quaters = cents / 25;
-	coins += quaters;
+	quarters = cents / 25;
+	coins += quarters;
 	cents %= 25;
 
 	dimes = cents / 10;
