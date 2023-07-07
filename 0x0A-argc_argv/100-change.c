@@ -11,7 +11,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int cents, coins, quarters, dimes, nickels, pennies;
+	int cents, coins, i;
+	int coin_values[] = {25, 10, 5, 2, 1};
 
 	if  (argc != 2)
 	{
@@ -27,21 +28,11 @@ int main(int argc, char *argv[])
 	}
 	coins = 0;
 
-	quarters = cents / 25;
-	coins += quarters;
-	cents %= 25;
-
-	dimes = cents / 10;
-	coins += dimes;
-	cents %= 10;
-
-	nickels = cents / 5;
-	coins += nickels;
-	cents %= 5;
-
-	pennies = cents / 1;
-	coins += pennies;
-
+	for (i = 0; i < 5; i++)
+	{
+		coins += cents / coin_values[i];
+		cents %= coin_values[i];
+	}
 	printf("%d\n", coins);
 	return (0);
 
