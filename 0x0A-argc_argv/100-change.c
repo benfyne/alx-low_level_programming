@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
 	nickels = cents / 5;
 	coins += nickels;
-	cent %= 5;
+	cents %= 5;
 
 	pennies = cents / 1;
 	coins += pennies;
