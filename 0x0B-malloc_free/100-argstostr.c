@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdliib.h>
+#include <stdlib.h>
 /**
  * arglen - concatenate argument
  *
