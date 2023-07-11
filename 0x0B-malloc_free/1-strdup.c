@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * strdup - retunrs pointer to new space
+ * _strdup - retunrs pointer to new space
  * in memory
  *
  * @str: char
