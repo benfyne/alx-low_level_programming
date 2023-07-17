@@ -49,7 +49,7 @@ char *copy_string(char *s)
 {
 	char *copy;
 
-	copy = malloc(sizeof(char) * (strlen(S) + 1));
+	copy = malloc(sizeof(char) * (strlen(s) + 1));
 	if (copy == NULL)
 	{
 		return (NULL);
