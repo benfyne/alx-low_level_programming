@@ -1,8 +1,11 @@
 #include <stdio.h>
-
+/**
+ * main - print macro
+ *
+ * Return: 0
+ */
 int main(void)
 {
-	char c  = '__FILE__';
-	_putchar(c);
-	return (0);
+	printf("%s\n", __FILE__);
+	return 0;
 }
