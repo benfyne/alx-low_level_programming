@@ -21,7 +21,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	{
 		return (NULL);
 	}
-	new_dog->name = strdup(name);
+	new_dog->name = copy_string(name);
 
 	if (new_dog->name == NULL)
 	{
@@ -29,7 +29,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 	new_dog->age = age;
-	new_dog->owner = strdup(owner);
+	new_dog->owner = copy_string(owner);
 
 	if (new_dog->owner == NULL)
 	{
@@ -40,40 +40,21 @@ dog_t *new_dog(char *name, float age, char *owner)
 	return (new_dog);
 }
 /**
- * _strlen - Returns the length of a string
- * @s: String to count
+ * copy_string - copies string
  *
- * Return: String length
- */
-int _strlen(char *s)
-{
-	int c = 0;
-
-	for (; *s != '\0'; s++)
-	{
-		c++;
-	}
-
-	return (c);
-}
-
-/**
- * _strcpy - Copy a string
- * @dest: Destination value
- * @src: Source value
+ * @s: string
  *
- * Return: the pointer to dest
+ * Return: 0
  */
-char *_strcpy(char *dest, char *src)
+char *copy_string(char *s)
 {
-	int i;
+	char *copy;
 
-	for (i = 0; src[i] != '\0'; i++)
+	copy = malloc(sizeof(char) * (strlen(S) + 1));
+	if (copy == NULL)
 	{
-		dest[i] = src[i];
+		return (NULL);
 	}
-
-	dest[i++] = '\0';
-
-	return (dest);
+	strcpy(copy, s);
+	return (copy);
 }
