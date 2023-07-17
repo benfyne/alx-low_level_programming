@@ -2,6 +2,7 @@
 
 int main(void)
 {
-	printf("%s\n", __FILE__);
+	char c  = '__FILE__';
+	_putchar(c);
 	return (0);
 }
