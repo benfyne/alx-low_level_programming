@@ -1,84 +1,91 @@
 #include <stdlib.h>
 #include "dog.h"
 
+int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
+
 /**
- * _strlen - a function that gets a length of string
+ * new_dog - The dog structure
+ * @name: The name of te dog
+ * @age: The age of the dog
+ * @owner: The owner of the dog
  *
- * @str: the string to get the length
- *
- * Return: length of @str
+ * Return: The dog structure
  */
-
-int _strlen(const char *str)
+dog_t *new_dog(char *name, float age, char *owner)
 {
-	int length = 0;
+	dog_t *cutie_dog;
+	int name_l = 0, own_l = 0;
 
-	while (*str++)
-		length++;
-	return (length);
+	if (name != NULL && owner != NULL)
+	{
+		name_l = _strlen(name) + 1;
+		own_l = _strlen(owner) + 1;
+		cutie_dog = malloc(sizeof(dog_t));
+
+		if (cutie_dog == NULL)
+			return (NULL);
+
+		cutie_dog->name = malloc(sizeof(char) * name_l);
+
+		if (cutie_dog->name == NULL)
+		{
+			free(cutie_dog);
+			return (NULL);
+		}
+
+		cutie_dog->owner = malloc(sizeof(char) * own_l);
+
+		if (cutie_dog->owner == NULL)
+		{
+			free(cutie_dog->name);
+			free(cutie_dog);
+			return (NULL);
+		}
+
+		cutie_dog->name = _strcpy(cutie_dog->name, name);
+		cutie_dog->owner = _strcpy(cutie_dog->owner, owner);
+		cutie_dog->age = age;
+	}
+
+	return (cutie_dog);
 }
 
 /**
- * _strcopy - a function that returns @dest with a copy of a string from @src
+ * _strlen - Returns the length of a string
+ * @s: String to count
  *
- * @src: string to copy
- * @dest: copy string to here
- *
- * Return: @dest
+ * Return: String length
  */
+int _strlen(char *s)
+{
+	int c = 0;
 
-char *_strcopy(char *dest, char *src)
+	for (; *s != '\0'; s++)
+	{
+		c++;
+	}
+
+	return (c);
+}
+
+/**
+ * _strcpy - Copy a string
+ * @dest: Destination value
+ * @src: Source value
+ *
+ * Return: the pointer to dest
+ */
+char *_strcpy(char *dest, char *src)
 {
 	int i;
 
-	for (i = 0; src[i]; i++)
+	for (i = 0; src[i] != '\0'; i++)
+	{
 		dest[i] = src[i];
-	dest[i] = '\0';
+	}
+
+	dest[i++] = '\0';
 
 	return (dest);
-}
-
-/**
- * new_dog - a function that creates a new dog
- *
- * @name: name of dog
- * @age: age of dog
- * @owner: dog owner
- *
- * Return: struct pointer dog
- *         NULL if function fails
- */
-
-dog_t *new_dog(char *name, float age, char *owner)
-{
-	dog_t *dog;
-
-	/* if name and owner are empty and age is less than zero return null*/
-	if (!name || age < 0 || !owner)
-		return (NULL);
-
-	dog = (dog_t *) malloc(sizeof(dog_t));
-	if (dog == NULL)
-		return (NULL);
-
-	dog->name = malloc(sizeof(char) * (_strlen(name) + 1));
-	if ((*dog).name == NULL)
-	{
-		free(dog);
-		return (NULL);
-	}
-
-	dog->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
-	if ((*dog).owner == NULL)
-	{
-		free(dog->name);
-		free(dog);
-		return (NULL);
-	}
-
-	dog->name = _strcopy(dog->name, name);
-	dog->age = age;
-	dog->owner = _strcopy(dog->owner, owner);
-
-	return (dog);
 }
