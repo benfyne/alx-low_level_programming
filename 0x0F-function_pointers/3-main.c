@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 
 	func = get_op_func(op);
 
-	if (func == NULL || (op[0] == '/' || op[0] == '%') && num2 == 0)
+	if ((func == NULL) || ((op[0] == '/' || op[0] == '%') && (num2 == 0)))
 	{
 		printf("Error\n");
 		exit(99 + !!func);
