@@ -1,4 +1,5 @@
 #include "3-calc.h"
+#include "function_pointers.h"
 /**
  * main - performs simple operations on two integers
  * @argc: number of arguments passed to the program
