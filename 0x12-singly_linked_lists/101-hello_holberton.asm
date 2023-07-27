@@ -1,20 +1,21 @@
-; Define constants
-section .data
-    msg: db "Hello, Holberton", 10 ; The message to print
+; Declare some constants
+section .rodata
+    msg: db "Hello, Holberton", 10 ; The message to print, followed by newline
     len: equ $ - msg ; The length of the message
+    format: db "%s", 0 ; The format string for printf
 
-; Define the main function
+; Declare the main function
 section .text
-    global main ; Declare main as global
+    global main ; Make the main function visible to the linker
 
 main:
-    ; Call printf with msg and len as arguments
-    mov rdi, msg ; First argument: the message
-    mov rsi, len ; Second argument: the length
-    extern printf ; Declare printf as external
-    call printf ; Call printf
+    ; Call the printf function with the message as an argument
+    mov rdi, format ; First argument: the format string
+    mov rsi, msg ; Second argument: the message to print
+    mov rax, 0 ; Indicate that there are no floating-point arguments
+    call printf ; Call the printf function
 
-    ; Exit the program with 0 as return value
-    mov rax, 60 ; System call number for exit
-    mov rdi, 0 ; Return value
+    ; Exit the program with 0 as the return code
+    mov rdi, 0 ; First argument: the return code
+    mov rax, 60 ; The system call number for exit
     syscall ; Invoke the system call
