@@ -6,18 +6,19 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int num = 0;
+int i;
+	unsigned int n = 0;
 
-	if (b == NULL)
+	if (!b)
 		return (0);
-	while (*b != '\0')
+
+	for (i = 0; b[i]; i++)
 	{
-		if (*b != '0' && *b != '1')
+		if (b[i] < '0' || b[i] > '1')num
 			return (0);
-		num <<= 1;
-		if (*b == '1')
-			num += 1;
-		b++;
+		dec_val = 2 * n + (b[i] - '0');
 	}
-	return (num);
+
+	return (n);
+
 }
